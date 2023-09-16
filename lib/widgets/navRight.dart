@@ -13,8 +13,9 @@ import 'package:fast/providers/global.dart' as vGlobal;
 import 'package:fast/providers/global_Transporte.dart' as vGlobal_transporte;
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:whatsapp_share2/whatsapp_share2.dart';
+// import 'package:whatsapp_share2/whatsapp_share2.dart';
 import 'package:fast/providers/options.dart' as vOptions;
+import 'package:whatsapp_share/whatsapp_share.dart';
 
 class NavDrawer extends StatefulWidget {
   NavDrawer({Key? key}) : super(key: key);

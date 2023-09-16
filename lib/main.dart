@@ -39,12 +39,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:fast/providers/options.dart' as vOptions;
 import 'package:fast/providers/global.dart' as vGlobal;
 
-Future<void> main() async {
-  runApp(const MyApp(key: Key("")));
+Future<void> main()  async {
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({required Key key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   _MyAppState createState() => _MyAppState();
@@ -65,8 +65,7 @@ class _MyAppState extends State<MyApp> {
   }
 
     _asyncMethod() async {
-    Timer mytimer = Timer.periodic(const Duration(minutes: 10), (timer) async {
-      DateTime timenow = DateTime.now();
+    Timer.periodic(const Duration(minutes: 10), (timer) async {
       await posToken();
     });
   }
@@ -81,7 +80,7 @@ class _MyAppState extends State<MyApp> {
       vOptions.tipoConexion = tipoConexion;
       vOptions.servidorConexion = servidorConexion;
       vOptions.servidorConexionPuerto = servidorConexionPuerto;
-      if (tipoConexion  == 1) {
+      if ( tipoConexion  == 1 ) {
         vGlobal.urlAPI = vGlobal.urlNube;
         estado = true;
         // await posToken();

@@ -28,7 +28,8 @@ import 'package:http/http.dart' as http;
 // import 'package:pdf/pdf.dart';
 // import 'package:printing/printing.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:whatsapp_share2/whatsapp_share2.dart';
+import 'package:whatsapp_share/whatsapp_share.dart';
+// import 'package:whatsapp_share2/whatsapp_share2.dart';
 
 import '../screens/Restaurante/s_rest_consumo.dart';
 

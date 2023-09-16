@@ -44,7 +44,7 @@ Future<mToken?> posToken() async {
     vGlobal.token = tToken.toString();
     vGlobal.tVersionAndroid = tJsonToken.data.tVersionAndroid.toString();
     return mTokenFromJson(responseString);
-  }on SocketException catch ( e ) {  
+  }on SocketException catch ( e ) {
     print(e.address);
     print(e.message);
     print(e.port);
@@ -176,7 +176,7 @@ Future<Map<String, dynamic>?> posImpresionWifi(String url, String impresora, Str
   }
   return null;
 }
-// 192.168.1.9:8081
+
 Future<Map<String, dynamic>?> getStatusServerPrint() async {
   // try {
   Map<String, dynamic> resp = {};

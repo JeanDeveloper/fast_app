@@ -43,7 +43,7 @@ class _cargando extends State<cargando> {
   }
 
   _asyncMethod() async {
-    updateText("Iniciando...");
+    // updateText("Iniciando...");
     try {
       await Future.delayed(const Duration(seconds: 1));
       final prefs = await SharedPreferences.getInstance();
@@ -53,7 +53,6 @@ class _cargando extends State<cargando> {
       vGlobal.urlAPI = vGlobal.urlNube;
       await Future.delayed(const Duration(seconds: 1));
 
-      // await posToken();
       // updateText("Conectando al Servidor...");
       // await Future.delayed(const Duration(seconds: 1));
       // if (vGlobal.token == "") {
@@ -62,10 +61,12 @@ class _cargando extends State<cargando> {
       //   return;
       // } else {
       //   if (vGlobal.tVersionAndroid != vGlobal.tVersionActual) {
-      //     updateText("Version instalada ${vGlobal.tVersionActual}\n\nActualíce a la versión mas reciente...");
+      //     updateText("Version instalada ${vGlobal.tVersionActual}\n\n  Actualíce a la versión mas reciente...");
       //     actualizado = false;
       //     return;
-      //   } else {
+      //   } 
+      // }
+
       vOptions.servidorImpresion = prefs.getString('servidorImpresion') ?? "";
       vOptions.servidorImpresionPuerto = prefs.getInt('servidorImpresionPuerto') ?? 80;
       vOptions.impresoraPrecuenta = prefs.getString('impresoraPrecuenta') ?? "";
@@ -193,7 +194,7 @@ class _cargando extends State<cargando> {
                 children: [
                   Icon(Icons.cloud_download_rounded, size: 30, color: ClsColor.tipo3()),
                   Link(
-                    uri: Uri.parse('https://play.google.com/store/apps/details?id=com.sertech.fast'),
+                    uri: Uri.parse(vGlobal.urlFastGPlay),
                     target: LinkTarget.self,
                     builder: (context, followLink) {
                       return RichText(

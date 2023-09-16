@@ -17,7 +17,7 @@ import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
 import 'package:open_file_safe/open_file_safe.dart';
-import 'package:whatsapp_share2/whatsapp_share2.dart';
+import 'package:whatsapp_share/whatsapp_share.dart';
 
 class trans_pedidoPResultado extends StatefulWidget {
   final String Origen;
@@ -275,6 +275,13 @@ class _trans_pedidoResultado extends State<trans_pedidoPResultado> {
                           return;
                         }
                         try {
+                          // await WhatsappShare.shareFile(
+                          //   package: Package.businessWhatsapp,
+                          //   text: vGlobal_comprobante.nombreComprobante,
+                          //   filePath: [(vGlobal_comprobante.pathComprobante)],
+                          //   phone: "${CCodigoPais.text}${CTelefono.text}",
+                          // );
+
                           await WhatsappShare.shareFile(
                             package: Package.businessWhatsapp,
                             text: vGlobal_comprobante.nombreComprobante,
@@ -282,6 +289,12 @@ class _trans_pedidoResultado extends State<trans_pedidoPResultado> {
                             phone: "${CCodigoPais.text}${CTelefono.text}",
                           );
                         } catch (e) {
+                          // await WhatsappShare.shareFile(
+                          //   package: Package.whatsapp,
+                          //   text: vGlobal_comprobante.nombreComprobante,
+                          //   filePath: [(vGlobal_comprobante.pathComprobante)],
+                          //   phone: "${CCodigoPais.text}51${CTelefono.text}",
+                          // );
                           await WhatsappShare.shareFile(
                             package: Package.whatsapp,
                             text: vGlobal_comprobante.nombreComprobante,

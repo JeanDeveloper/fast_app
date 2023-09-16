@@ -7,7 +7,8 @@ import 'package:fast/models/Maestro/m_GetNavBarRight.dart';
 import 'package:fast/models/Maestro/m_GetTipoDocumentoIdentidad.dart';
 import 'package:fast/providers/options.dart' as vOptions;
 
-String? tVersionActual = '1.0.xx';
+String? tVersionActual = '1.0.40';
+String urlFastGPlay =  "https://play.google.com/store/apps/details?id=com.sertech.fast";
 
 // conexion API
 String? UserAPI = 'DEMOAPI';

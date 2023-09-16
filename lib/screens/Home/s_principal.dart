@@ -20,7 +20,8 @@ import 'package:fast/widgets/decoration.dart';
 import 'package:fast/widgets/navRight.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:whatsapp_share2/whatsapp_share2.dart';
+import 'package:whatsapp_share/whatsapp_share.dart';
+// import 'package:whatsapp_share2/whatsapp_share2.dart';
 
 class principal extends StatefulWidget {
   const principal({Key? key}) : super(key: key);

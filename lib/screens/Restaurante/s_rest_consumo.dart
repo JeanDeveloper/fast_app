@@ -371,40 +371,40 @@ class _consumo extends State<consumo> with TickerProviderStateMixin {
                     const SizedBox(width: 10),
                     ElevatedButton.icon(
                       onPressed: () async {
-                        // if (CClave.text != vGlobal.tCodigoValidacion) {
-                        //   Fluttertoast.showToast(
-                        //     msg: "Clave de Anulación Incorrecta",
-                        //     gravity: ToastGravity.CENTER,
-                        //     backgroundColor: ClsColor.tipo6(),
-                        //     textColor: ClsColor.tipo4(),
-                        //   );
-                        //   return;
-                        // }
+                        if (CClave.text != vGlobal.tCodigoValidacion) {
+                          Fluttertoast.showToast(
+                            msg: "Clave de Anulación Incorrecta",
+                            gravity: ToastGravity.CENTER,
+                            backgroundColor: ClsColor.tipo6(),
+                            textColor: ClsColor.tipo4(),
+                          );
+                          return;
+                        }
                         ClsDecoration.showDialogLoading(context);
                         bool statusServidorLocal = true;
                         if (vOptions.tipoConexion == 1) {
                           if (vOptions.tipoImpresion == 2 || vOptions.tipoImpresion == null) {
 
                             //TODO: COMENTADO
-                            // try {
-                            //   Map<String, dynamic>? postReg = await getStatusServerPrint();
-                            //   bool codigo = postReg?["code"];
-                            //   if (codigo == false) {
-                            //     Fluttertoast.showToast(
-                            //         msg: "Error: No se logro conectar al servidor local, Verifique la Configuración de Impresoras",
-                            //         gravity: ToastGravity.CENTER,
-                            //         backgroundColor: ClsColor.tipo6(),
-                            //         textColor: ClsColor.tipo4());
-                            //     statusServidorLocal = false;
-                            //     Navigator.of(context).pop();
-                            //     return;
-                            //   }
-                            // } catch (e) {
-                            //   Fluttertoast.showToast(msg: "Error: Verifique la Configuración de Impresoras", gravity: ToastGravity.CENTER, backgroundColor: ClsColor.tipo6(), textColor: ClsColor.tipo4());
-                            //   statusServidorLocal = false;
-                            //   Navigator.of(context).pop();
-                            //   return;
-                            // }
+                            try {
+                              Map<String, dynamic>? postReg = await getStatusServerPrint();
+                              bool codigo = postReg?["code"];
+                              if (codigo == false) {
+                                Fluttertoast.showToast(
+                                    msg: "Error: No se logro conectar al servidor local, Verifique la Configuración de Impresoras",
+                                    gravity: ToastGravity.CENTER,
+                                    backgroundColor: ClsColor.tipo6(),
+                                    textColor: ClsColor.tipo4());
+                                statusServidorLocal = false;
+                                Navigator.of(context).pop();
+                                return;
+                              }
+                            } catch (e) {
+                              Fluttertoast.showToast(msg: "Error: Verifique la Configuración de Impresoras", gravity: ToastGravity.CENTER, backgroundColor: ClsColor.tipo6(), textColor: ClsColor.tipo4());
+                              statusServidorLocal = false;
+                              Navigator.of(context).pop();
+                              return;
+                            }
                           }
                         }
 
@@ -1327,7 +1327,6 @@ class _consumo extends State<consumo> with TickerProviderStateMixin {
             ElevatedButton.icon(
               onPressed: () async {
 
-                // _anularMultipleConfirmacion(context);
 
                 //IRÁ TODO LA LOGICA PARA PODER BORRAR TODO.
 
@@ -1624,38 +1623,38 @@ class _consumo extends State<consumo> with TickerProviderStateMixin {
                     const SizedBox(width: 10),
                     ElevatedButton.icon(
                       onPressed: () async {
-                        // if (CClave.text != vGlobal.tCodigoValidacion) {
-                        //   Fluttertoast.showToast(
-                        //     msg: "Clave de Anulación Incorrecta",
-                        //     gravity: ToastGravity.CENTER,
-                        //     backgroundColor: ClsColor.tipo6(),
-                        //     textColor: ClsColor.tipo4(),
-                        //   );
-                        //   return;
-                        // }
+                        if (CClave.text != vGlobal.tCodigoValidacion) {
+                          Fluttertoast.showToast(
+                            msg: "Clave de Anulación Incorrecta",
+                            gravity: ToastGravity.CENTER,
+                            backgroundColor: ClsColor.tipo6(),
+                            textColor: ClsColor.tipo4(),
+                          );
+                          return;
+                        }
                         ClsDecoration.showDialogLoading(context);
                         bool statusServidorLocal = true;
                         if (vOptions.tipoConexion == 1) {
                           if (vOptions.tipoImpresion == 2 || vOptions.tipoImpresion == null) {
-                            // try {
-                            //   Map<String, dynamic>? postReg = await getStatusServerPrint();
-                            //   bool codigo = postReg?["code"];
-                            //   if (codigo == false) {
-                            //     Fluttertoast.showToast(
-                            //         msg: "Error: No se logro conectar al servidor local, Verifique la Configuración de Impresoras",
-                            //         gravity: ToastGravity.CENTER,
-                            //         backgroundColor: ClsColor.tipo6(),
-                            //         textColor: ClsColor.tipo4());
-                            //     statusServidorLocal = false;
-                            //     Navigator.of(context).pop();
-                            //     return;
-                            //   }
-                            // } catch (e) {
-                            //   Fluttertoast.showToast(msg: "Error: Verifique la Configuración de Impresoras", gravity: ToastGravity.CENTER, backgroundColor: ClsColor.tipo6(), textColor: ClsColor.tipo4());
-                            //   statusServidorLocal = false;
-                            //   Navigator.of(context).pop();
-                            //   return;
-                            // }
+                            try {
+                              Map<String, dynamic>? postReg = await getStatusServerPrint();
+                              bool codigo = postReg?["code"];
+                              if (codigo == false) {
+                                Fluttertoast.showToast(
+                                    msg: "Error: No se logro conectar al servidor local, Verifique la Configuración de Impresoras",
+                                    gravity: ToastGravity.CENTER,
+                                    backgroundColor: ClsColor.tipo6(),
+                                    textColor: ClsColor.tipo4());
+                                statusServidorLocal = false;
+                                Navigator.of(context).pop();
+                                return;
+                              }
+                            } catch (e) {
+                              Fluttertoast.showToast(msg: "Error: Verifique la Configuración de Impresoras", gravity: ToastGravity.CENTER, backgroundColor: ClsColor.tipo6(), textColor: ClsColor.tipo4());
+                              statusServidorLocal = false;
+                              Navigator.of(context).pop();
+                              return;
+                            }
                           }
                         }
 

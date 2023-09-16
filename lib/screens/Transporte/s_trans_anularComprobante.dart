@@ -22,7 +22,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
 import 'package:open_file_safe/open_file_safe.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:whatsapp_share2/whatsapp_share2.dart';
+import 'package:whatsapp_share/whatsapp_share.dart';
 
 class trans_anularComprobante extends StatefulWidget {
   final String Origen;
@@ -438,7 +438,7 @@ class _trans_anularComprobante extends State<trans_anularComprobante> {
                           );
                           return;
                         }
-                        if (CCodigoPais.text.length == 0) {
+                        if (CCodigoPais.text.isEmpty) {
                           Fluttertoast.showToast(
                             msg: "Ingrese Còdigo de Pais",
                             gravity: ToastGravity.CENTER,

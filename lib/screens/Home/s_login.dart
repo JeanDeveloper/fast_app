@@ -263,9 +263,9 @@ class _login extends State<login> {
                               } else {
                                 if (vOptions.servidorConexion!.length > 0 && vOptions.servidorConexionPuerto!.length > 0) {
                                   
-                                  //JEAN MODIFICACION
+
                                   vGlobal.urlAPI = 'https://${vOptions.servidorConexion}:${vOptions.servidorConexionPuerto}';
-                                  // vGlobal.urlAPI = 'https://localhost:5001';
+
                                   await posToken();
                                 } else {
                                   Navigator.of(context).pop();
@@ -586,7 +586,7 @@ class _login extends State<login> {
                           children: [
                             Icon(Icons.cloud_download_rounded, size: 30, color: ClsColor.tipo3()),
                             Link(
-                              uri: Uri.parse('https://play.google.com/store/apps/details?id=com.sertech.fast'),
+                              uri: Uri.parse(vGlobal.urlFastGPlay),
                               target: LinkTarget.self,
                               builder: (context, followLink) {
                                 return RichText(
