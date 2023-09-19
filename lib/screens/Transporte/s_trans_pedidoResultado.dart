@@ -647,9 +647,10 @@ class _trans_pedidoResultado extends State<trans_pedidoPResultado> {
                               color: ClsColor.tipo4(),
                               child: InkWell(
                                 splashColor: ClsColor.tipo1(),
-                                onTap: () {
+                                onTap: () async {
                                   // OpenFile.open("/storage/emulated/0/Download/B001-00000245.pdf");
-                                  OpenFile.open(vGlobal_comprobante.pathComprobante);
+                                  await OpenFile.open(vGlobal_comprobante.pathComprobante);
+                                  print(vGlobal_comprobante.pathComprobante);
                                   // Navigator.push(
                                   //   context,
                                   //   MaterialPageRoute(

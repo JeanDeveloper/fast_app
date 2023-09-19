@@ -807,8 +807,9 @@ class _trans_anularComprobante extends State<trans_anularComprobante> {
                               color: ClsColor.tipo4(),
                               child: InkWell(
                                 splashColor: ClsColor.tipo1(),
-                                onTap: () {
-                                  OpenFile.open(vGlobal_comprobante.pathComprobante);
+                                onTap: () async {
+                                  await OpenFile.open(vGlobal_comprobante.pathComprobante);
+                                  print(vGlobal_comprobante.pathComprobante);
                                   // Navigator.push(
                                   //   context,
                                   //   MaterialPageRoute(
