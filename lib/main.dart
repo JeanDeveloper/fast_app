@@ -85,7 +85,7 @@ class _MyAppState extends State<MyApp> {
         estado = true;
         // await posToken();
       } else {
-        if (servidorConexion.isNotEmpty && servidorConexionPuerto.isNotEmpty) { 
+        if (servidorConexion.isNotEmpty && servidorConexionPuerto.isNotEmpty) {
           vGlobal.urlAPI = 'http://${vOptions.servidorConexion}:${vOptions.servidorConexionPuerto}';
           estado = true;
           // await posToken();

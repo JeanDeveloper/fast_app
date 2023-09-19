@@ -37,10 +37,10 @@ packages:
     dependency: transitive
     description:
       name: bidi
-      sha256: "2c162a66885167f1f92c41583efea9a435cb268d58322ba266613b9582440f87"
+      sha256: "1a7d0c696324b2089f72e7671fd1f1f64fef44c980f3cebc84e803967c597b63"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.8"
+    version: "2.0.10"
   boolean_selector:
     dependency: transitive
     description:
@@ -226,10 +226,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_file_downloader
-      sha256: "383d1fda8ab7d9bc4314db20ab322c135ab9f616545eca4b19592b3428e2ecca"
+      sha256: aeb99d1ca55ad01237c7cfa42502943831e990bec4954c5b695a01f315a5636d
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.2"
+    version: "1.1.3"
   flutter_launcher_icons:
     dependency: "direct main"
     description:
@@ -512,6 +512,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.1"
+  responsive_framework:
+    dependency: "direct main"
+    description:
+      name: responsive_framework
+      sha256: "23aa7be5d5136922df708f6ddccb5ec4e0eb8bc576c3f105f5093f31d6b68e50"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.1"
   shared_preferences:
     dependency: "direct main"
     description:
