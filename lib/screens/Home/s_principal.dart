@@ -7,6 +7,7 @@ import 'package:fast/providers/providers_Caja.dart';
 import 'package:fast/screens/Caja/s_caja_aperturar.dart';
 import 'package:fast/screens/Caja/s_caja_cajaChica.dart';
 import 'package:fast/screens/Restaurante/s_rest_Print.dart';
+import 'package:fast/screens/Restaurante/s_rest_cocina.dart';
 import 'package:fast/screens/Restaurante/s_rest_niveles.dart';
 import 'package:fast/screens/Transporte/s_trans_ordenTrasladoLista.dart';
 import 'package:fast/screens/Transporte/s_trans_registrar.dart';
@@ -21,7 +22,6 @@ import 'package:fast/widgets/navRight.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:whatsapp_share/whatsapp_share.dart';
-// import 'package:whatsapp_share2/whatsapp_share2.dart';
 
 class principal extends StatefulWidget {
   const principal({Key? key}) : super(key: key);
@@ -57,6 +57,7 @@ class _principal extends State<principal> {
 
   @override
   Widget build(BuildContext context) {
+
     return WillPopScope(
       onWillPop: _onWillPop,
       child: Scaffold(
@@ -88,7 +89,7 @@ class _principal extends State<principal> {
       builder: (context) {
         return Container(
           height: 150,
-          padding: EdgeInsets.symmetric(horizontal: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -263,7 +264,33 @@ class _principal extends State<principal> {
                                     ),
                                   ),
                                 ),
-                              ]
+                              ],
+
+                              //TODO: ADD BY JEAN
+                              Container(
+                                padding: const EdgeInsets.all(5.0),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(10),
+                                  child: Material(
+                                    color: ClsColor.tipo4(),
+                                    child: InkWell(
+                                      onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (context) => CocinaScreen())),
+                                      splashColor: ClsColor.tipo1(),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(10),
+                                        child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                          children: <Widget>[
+                                            Icon(Icons.cookie, size: 35, color: ClsColor.tipo7()),
+                                            Text("Cocina", textAlign: TextAlign.center, style: TextStyle(color: ClsColor.tipo1(), fontSize: 12, fontWeight: FontWeight.w400)),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+
                             ],
                           ),
                         ),

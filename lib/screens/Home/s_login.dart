@@ -16,6 +16,7 @@ import 'package:fast/styles/color_style.dart';
 import 'package:fast/widgets/decoration.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:responsive_framework/responsive_breakpoints.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:fast/providers/global.dart' as vGlobal;
 import 'package:fast/providers/options.dart' as vOptions;
@@ -62,25 +63,18 @@ class _login extends State<login> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: _onWillPop,
-      child: OrientationBuilder(
-        builder: ( _ , orientation) {
 
-          return Scaffold(
-            backgroundColor: ClsColor.tipo1(),
-            body: SizedBox.expand(
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Expanded(
-                    child: form_login(context)
-                  )
-                ],
-              ),
-            ),
-          );
-        },
+
+    return WillPopScope(  
+      onWillPop: _onWillPop,
+      child: Scaffold(
+        backgroundColor: ClsColor.tipo1(),
+        body: SizedBox.expand(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [Expanded(child: form_login(context))],
+          ),
+        ),
       ),
     );
   }

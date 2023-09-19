@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
+import 'package:fast/core/constants.dart';
 import 'package:fast/models/Restaurante/m_GetCartaCategoria.dart';
 import 'package:fast/models/Maestro/m_GetFormatosEmpresas.dart';
 import 'package:fast/models/Maestro/m_Login.dart';
@@ -11,6 +12,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fast/screens/Home/s_Principal.dart';
 import 'package:fast/screens/Home/s_Login.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:fast/providers/global.dart' as vGlobal;
 import 'package:fast/providers/options.dart' as vOptions;
@@ -159,68 +161,81 @@ class _cargando extends State<cargando> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: ClsColor.tipo1(),
-        width: double.infinity,
-        height: double.infinity,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // Text(
-            //   'CONTROL DE ASISTENCIA',
-            //   style: TextStyle(color: ClsColor.tipo5(), fontSize: 20, fontWeight: FontWeight.w700),
-            // ),
-            const Image(
-              image: ExactAssetImage('assets/images/FAST_ICONO2.png'),
-              fit: BoxFit.cover,
-              width: 200,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(40.0),
-              child: Text(
-                textValue,
-                textAlign: TextAlign.center,
-                style: TextStyle(color: ClsColor.tipo4(), fontSize: 15),
-              ),
-            ),
-            if (actualizado == false) ...[
-              Column(
+    return ResponsiveBreakpoints.builder(
+      breakpoints: Constants.breakpoints,
+      child: OrientationBuilder(
+        builder: (context, orientation) {
+
+          // Booleans
+          // print(ResponsiveBreakpoints.of(context).isDesktop);
+          // print(ResponsiveBreakpoints.of(context).isTablet);
+          // print(ResponsiveBreakpoints.of(context).isMobile);
+          // print(ResponsiveBreakpoints.of(context).isPhone);
+          // print(ResponsiveBreakpoints.of(context).orientation);
+          // print(ResponsiveBreakpoints.of(context).screenHeight);
+          // print(ResponsiveBreakpoints.of(context).screenWidth);
+
+          return Scaffold(
+            body: Container(
+              color: ClsColor.tipo1(),
+              width: double.infinity,
+              height: double.infinity,
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.cloud_download_rounded, size: 30, color: ClsColor.tipo3()),
-                  Link(
-                    uri: Uri.parse(vGlobal.urlFastGPlay),
-                    target: LinkTarget.self,
-                    builder: (context, followLink) {
-                      return RichText(
-                        textAlign: TextAlign.center,
-                        text: TextSpan(
-                          children: [
-                            TextSpan(
-                              text: 'Descargar version ${vGlobal.tVersionAndroid}',
-                              style: TextStyle(
-                                color: ClsColor.tipo3(),
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15,
-                                // decoration: TextDecoration.underline,
-                              ),
-                              recognizer: TapGestureRecognizer()..onTap = followLink,
-                            ),
-                          ],
-                        ),
-                      );
-                    },
+                  const Image(
+                    image: ExactAssetImage('assets/images/FAST_ICONO2.png'),
+                    fit: BoxFit.cover,
+                    width: 200,
                   ),
+                  Padding(
+                    padding: const EdgeInsets.all(40.0),
+                    child: Text(
+                      textValue,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: ClsColor.tipo4(), fontSize: 15),
+                    ),
+                  ),
+                  if (actualizado == false) ...[
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Icon(Icons.cloud_download_rounded, size: 30, color: ClsColor.tipo3()),
+                        Link(
+                          uri: Uri.parse(vGlobal.urlFastGPlay),
+                          target: LinkTarget.self,
+                          builder: (context, followLink) {
+                            return RichText(
+                              textAlign: TextAlign.center,
+                              text: TextSpan(
+                                children: [
+                                  TextSpan(
+                                    text: 'Descargar version ${vGlobal.tVersionAndroid}',
+                                    style: TextStyle(
+                                      color: ClsColor.tipo3(),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15,
+                                      // decoration: TextDecoration.underline,
+                                    ),
+                                    recognizer: TapGestureRecognizer()..onTap = followLink,
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                        ),
+                      ],
+                    ),
+                  ]
                 ],
               ),
-            ]
-          ],
-        ),
+            ),
+          );
+        }
       ),
     );
   }

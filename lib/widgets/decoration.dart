@@ -12,6 +12,7 @@ import 'package:fast/screens/Restaurante/s_rest_Print.dart';
 import 'package:fast/screens/Restaurante/s_rest_pedidoPersonalizacion.dart';
 import 'package:fast/screens/Transporte/s_trans_anularComprobante.dart';
 import 'package:fast/screens/Transporte/s_trans_pedidoPersonalizacion.dart';
+import 'package:fast/widgets/real_time_clock.dart';
 // import 'package:fast/screens/Restaurante/s_rest_consumo.dart';
 // import 'package:fast/widgets/cambioEmpresa.dart';
 import 'package:flutter/material.dart';
@@ -243,11 +244,34 @@ class ClsDecoration {
     );
   }
 
-  static AppBar appBar(BuildContext context, String ruta) {
+  static AppBar appBar(BuildContext context, String ruta, {bool? isBoth = false}) {
     return AppBar(
       automaticallyImplyLeading: true,
       backgroundColor: ClsColor.tipo1(),
-      title: ruta == ""
+      title:  (isBoth == true)
+        ?  Transform(
+              transform: Matrix4.translationValues(-20.0, 0.0, 0.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+
+                  IconButton(
+                    icon: Icon(
+                      Icons.arrow_circle_left_rounded,
+                      size: 25,
+                      color: ClsColor.tipo4(),
+                    ),
+                    onPressed: () =>  Navigator.pushNamed(context, ruta),
+                  ),
+
+                  Image.asset('assets/images/FAST_BLANCO_2x.png', width: 50),
+                  Spacer(),
+                  const RealTimeClock(),
+                
+                ],
+              ),
+            )
+        : ruta == ""
           ? Transform(
               transform: Matrix4.translationValues(-20.0, 0.0, 0.0),
               child: Row(
@@ -275,6 +299,39 @@ class ClsDecoration {
                 ],
               ),
             ),
+      
+      
+      // title: ruta == ""
+      //     ? Transform(
+      //         transform: Matrix4.translationValues(-20.0, 0.0, 0.0),
+      //         child: Row(
+      //           mainAxisAlignment: MainAxisAlignment.start,
+      //           children: [
+      //             Image.asset('assets/images/FAST_BLANCO_2x.png', width: 40),
+      //           ],
+      //         ),
+      //       )
+      //     : Transform(
+      //         transform: Matrix4.translationValues(-20.0, 0.0, 0.0),
+      //         child: Row(
+      //           mainAxisAlignment: MainAxisAlignment.start,
+      //           children: [
+      //             IconButton(
+      //               icon: Icon(
+      //                 Icons.arrow_circle_left_rounded,
+      //                 size: 25,
+      //                 color: ClsColor.tipo4(),
+      //               ),
+      //               onPressed: () {
+      //                 Navigator.pushNamed(context, ruta);
+      //               },
+      //             ),
+      //           ],
+      //         ),
+      //       ),
+      
+      
+      
       elevation: 0,
       actions: [
         Column(

@@ -6,6 +6,7 @@ import 'package:fast/screens/Caja/s_caja_aperturar.dart';
 import 'package:fast/screens/Caja/s_caja_cajaChica.dart';
 import 'package:fast/screens/Caja/s_caja_cajaDiaria.dart';
 import 'package:fast/screens/Caja/s_caja_cajaDiariaDetalle.dart';
+import 'package:fast/screens/Restaurante/s_rest_cocina.dart';
 import 'package:fast/screens/Restaurante/s_rest_delivery.dart';
 import 'package:fast/screens/Restaurante/s_rest_llevar.dart';
 import 'package:fast/screens/Restaurante/s_rest_mesaTransferir.dart';
@@ -34,6 +35,7 @@ import 'package:fast/screens/Restaurante/s_rest_productoSeleccionar.dart';
 import 'package:fast/screens/Restaurante/s_rest_pedidoPersonalizacion.dart';
 import 'package:fast/screens/Restaurante/s_rest_nuevaOrden.dart';
 import 'package:fast/screens/Restaurante/s_rest_Print.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 // import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:fast/providers/options.dart' as vOptions;
@@ -100,12 +102,24 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
+      builder: (context, child) => ResponsiveBreakpoints.builder(
+        child: child!,
+        breakpoints: [
+          const Breakpoint(start: 0, end: 450, name: MOBILE),
+          const Breakpoint(start: 451, end: 800, name: TABLET),
+          const Breakpoint(start: 801, end: 1920, name: DESKTOP),
+          const Breakpoint(start: 1921, end: double.infinity, name: '4K'),
+        ],           
+      ),
+
       // localizationsDelegates: const [
       //   // GlobalMaterialLocalizations.delegate,
       //   // GlobalCupertinoLocalizations.delegate,
       //   DefaultWidgetsLocalizations.delegate,
       // ],
       // supportedLocales: const [Locale('en'), Locale('es')],
+
       debugShowCheckedModeBanner: false,
       routes: {
         //////////////////////////////////////////////////// INICIO
@@ -143,6 +157,8 @@ class _MyAppState extends State<MyApp> {
         'navcaja_aperturar': (_) => const caja_aperturar(),
         'navcaja_cajaDiaria': (_) => const caja_cajaDiaria(),
         'navcaja_cajaDiariaDetalle': (_) => const caja_cajaDiariaDetalle(iTipo: 0),
+
+        'navcocina': ( _ ) => const CocinaScreen(),
       },
       initialRoute: 'navcargando',
     );
